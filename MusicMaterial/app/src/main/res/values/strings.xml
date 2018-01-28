@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MusicMaterial</string>
+    <string name="action_settings">Settings</string>
+    <string name="dev_name">m u $ i c</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

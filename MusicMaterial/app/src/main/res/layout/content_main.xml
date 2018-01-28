@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.bellaku.naveenprakash.musicmaterial.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@android:color/transparent"
+        app:srcCompat="@drawable/music_material_icon" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fab"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:onClick="songPicked"
+        android:scrollbars="vertical" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/layout_playing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/my_recycler_view"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_toLeftOf="@+id/fab"
+        android:visibility="invisible"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="7dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray">
+
+            <TextView
+                android:id="@+id/tx_pl_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="artist"
+                android:textSize="10dp" />
+
+
+            <rm.com.audiowave.AudioWaveView
+                android:id="@+id/wave"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_margin="16dp"
+                app:animateExpansion="false"
+                app:chunkWidth="3dp"
+                app:chunkHeight="24dp"
+                app:minChunkHeight="2dp"
+                app:chunkSpacing="1dp"
+                app:chunkRadius="1dp"
+                app:waveColor="@android:color/holo_red_light"
+                />
+
+            <TextView
+                android:id="@+id/tx_pl_song"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tx_pl_artist"
+                android:layout_alignParentTop="true"
+                android:text="song"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
